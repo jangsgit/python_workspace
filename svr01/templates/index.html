@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="euc-kr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat with GPT Test</title>
+    </head>
+<body>
+    <h2>Enter your SQL query:</h2>
+    <form action="/query-gpt" method="post">
+        <input type="text" name="user_query" required>
+        <input type="submit" value="GPT에게 질의하기">
+    </form>
+    <br>
+    
+    <h2>TABLE SELECT TEST:</h2>
+    <form action="/data" method="post">
+        <input type="text" name="date_query" required>
+        <input type="submit" value="매출일자보내기">
+    </form>
+    <br>
+
+    
+    <h2>Graph TEST:</h2>
+    <form action="/graph" method="post">
+        <input type="text" name="year_query" required>
+        <input type="submit" value="매출년도">
+    </form>
+    <br>
+    
+    <h2>단순 기계학습모델 TEST:</h2>
+    <form action="/accline" method="post">
+        <input type="text" name="acc_query" required>
+        <input type="submit" value="선형학습모델">
+    </form>
+    <br>
+    
+    <h2>랜덤 포레스트  TEST:</h2>
+    <form action="/accrandom" method="post">
+        <input type="text" name="random_query" required>
+        <input type="submit" value="랜덤 포레스트">
+    </form>
+    
+    <h2>그래디언트 부스팅 머신  TEST:</h2>
+    <form action="/accgrad" method="post">
+        <input type="text" name="grad_query" required>
+        <input type="submit" value="그래디언트 부스팅 머신">
+        <img src="data:image/png;base64,{{ plot_url }}">
+    </form>
+
+    <h2>풍무자이 고장 현황 예측</h2>
+    <form action="/elvrandom" method="post">
+        호기<input type="text" name="ho_query" >
+        년도<input type="text" name="year_query" >
+        <input type="submit" value="풍무자이">
+        <img src="data:image/png;base64,{{ plot_url }}">
+    </form>
+</body>
+</html>
